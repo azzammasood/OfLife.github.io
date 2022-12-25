@@ -1,0 +1,225 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.title-heading {
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    color: yellowgreen;
+}
+
+.title-name {
+    position: absolute;
+    top: 2%;
+    left: 7%;
+    color: white;
+}
+
+.Q2 {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    color: yellowgreen
+}
+
+.column-1 {
+    position: absolute;
+    top: 7%;
+    left: 3%;
+    color: white;
+}
+
+.column-2 {
+    position: absolute;
+    top: 9%;
+    left: 3%;
+    color: white;
+}
+
+.column-3 {
+    position: absolute;
+    top: 11%;
+    left: 3%;
+    color: white;
+}
+
+.column-4 {
+    position: absolute;
+    top: 13%;
+    left: 3%;
+    color: white;
+}
+
+.Q3 {
+    position: absolute;
+    top: 16%;
+    left: 3%;
+    color: yellowgreen
+}
+
+.Q3-answer {
+    position: absolute;
+    top: 18%;
+    left: 3%;
+    color: white;
+}
+
+.Q4a {
+    position: absolute;
+    top: 30%;
+    left: 3%;
+    color: yellowgreen
+}
+
+.Q4a-answer {
+    position: absolute;
+    top: 32%;
+    left: 3%;
+    color: white;
+}
+
+.Q4b {
+    position: absolute;
+    top: 35%;
+    left: 3%;
+    color: yellowgreen
+}
+
+.Q4b-answer {
+    position: absolute;
+    top: 37%;
+    left: 3%;
+    color: white;
+}
+
+.Q5 {
+    position: absolute;
+    top: 40%;
+    left: 3%;
+    color: yellowgreen
+}
+
+.sitemap {
+    position: absolute;
+    top: 42%;
+    left: 3%;
+    color: white;
+    width: 18%;
+}
+
+.Q6 {
+    position: absolute;
+    top: 67%;
+    left: 3%;
+    color: yellowgreen
+}
+
+.Q6-answer-1 {
+    position: absolute;
+    top: 69%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-2 {
+    position: absolute;
+    top: 71%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-3 {
+    position: absolute;
+    top: 73%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-4 {
+    position: absolute;
+    top: 75%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-5 {
+    position: absolute;
+    top: 77%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-6 {
+    position: absolute;
+    top: 79%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-7 {
+    position: absolute;
+    top: 81%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-8 {
+    position: absolute;
+    top: 83%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-9 {
+    position: absolute;
+    top: 85%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-10 {
+    position: absolute;
+    top: 87%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-11 {
+    position: absolute;
+    top: 89%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-12 {
+    position: absolute;
+    top: 91%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-13 {
+    position: absolute;
+    top: 93%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-14 {
+    position: absolute;
+    top: 95%;
+    left: 3%;
+    color: white;
+}
+
+.Q6-answer-15 {
+    position: absolute;
+    top: 97%;
+    left: 3%;
+    color: white;
+}
+
+

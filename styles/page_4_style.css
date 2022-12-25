@@ -1,0 +1,187 @@
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.image1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image2 {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    animation: fadeIn 2.3s;
+}
+
+.image3 {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 30%;
+    animation: shake 5s;
+    animation-iteration-count: infinite;
+}
+
+.image3 {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 30%;
+    animation: shake 5s;
+    animation-iteration-count: infinite;
+}
+
+.dead-alien {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 30%;
+}
+
+.image4 {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    width: 15%;
+    animation: fadeIn 5.3s;
+}
+
+.locked-chest {
+    position: absolute;
+    top: 30%;
+    left: 42%;
+    width: 17%;
+}
+
+.unlocked-chest {
+    position: absolute;
+    top: 30%;
+    left: 42%;
+    width: 17%;
+}
+
+.sword {
+    position: absolute;
+    top: 13%;
+    left: 48%;
+    width: 25%;
+}
+
+.completed {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    animation: fadeIn 1.3s;
+}
+
+.statement {
+    position: absolute;
+    top: 45%;
+    left: 42%;
+    width: 10%;
+    border: 2px black
+}
+
+.player-health-full {
+    position: absolute;
+    top: 8%;
+    left: 82%;
+    width: 15%;
+}
+
+.player-health-70 {
+    position: absolute;
+    top: 8%;
+    left: 82%;
+    width: 15%;
+}
+
+.player-health-40 {
+    position: absolute;
+    top: 8%;
+    left: 82%;
+    width: 15%;
+}
+
+.player-health-10 {
+    position: absolute;
+    top: 8%;
+    left: 82%;
+    width: 15%;
+}
+
+.alien-health-full {
+    position: absolute;
+    top: 18%;
+    left: 82%;
+    width: 15%;
+}
+
+.alien-health-70 {
+    position: absolute;
+    top: 18%;
+    left: 82%;
+    width: 15%;
+}
+
+.alien-health-40 {
+    position: absolute;
+    top: 18%;
+    left: 82%;
+    width: 15%;
+}
+
+.alien-health-10 {
+    position: absolute;
+    top: 18%;
+    left: 82%;
+    width: 15%;
+}
+
+.player-health-text {
+    position: absolute;
+    top: 5%;
+    left: 82%;
+    width: 8%;
+}
+
+.alien-health-text {
+    position: absolute;
+    top: 15%;
+    left: 82.5%;
+    width: 6.2%;
+}
+
+.sound {
+    position: absolute;
+    top: 80%;
+    left: 82%;
+    width: 15%;
+  }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    0% { opacity: 0; }
+  }
+
+
+@keyframes shake {
+    0% { transform: translate(5px, 5px) rotate(0deg); }
+    10% { transform: translate(-5px, -2px) rotate(-3deg); }
+    20% { transform: translate(-3px, 0px) rotate(2deg); }
+    30% { transform: translate(3px, 2px) rotate(1deg); }
+    40% { transform: translate(5px, -5px) rotate(3deg); }
+    50% { transform: translate(-5px, 2px) rotate(-2deg); }
+    60% { transform: translate(-3px, 5px) rotate(-1deg); }
+    70% { transform: translate(3px, 5px) rotate(-3deg); }
+    80% { transform: translate(-5px, -5px) rotate(3deg); }
+    90% { transform: translate(5px, 2px) rotate(0deg); }
+    100% { transform: translate(0px, 0px) rotate(-3deg); }
+}

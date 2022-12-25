@@ -1,0 +1,96 @@
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .image1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .asteroid1 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 8%;
+    -webkit-animation:spin 20s linear infinite;
+    -moz-animation:spin 20s linear infinite;
+    animation:spin 20s linear infinite;
+  }
+
+  .asteroid2 {
+    position: absolute;
+    top: 15%;
+    left: 24%;
+    width: 8%;
+    -webkit-animation:spin 20s linear infinite;
+    -moz-animation:spin 20s linear infinite;
+    animation:spin 20s linear infinite;
+  }
+
+  .asteroid3 {
+    position: absolute;
+    top: 37%;
+    left: 19%;
+    width: 8%;
+    -webkit-animation:spin 20s linear infinite;
+    -moz-animation:spin 20s linear infinite;
+    animation:spin 20s linear infinite;
+  }
+
+  .asteroid4 {
+    position: absolute;
+    top: 63%;
+    left: 63%;
+    width: 8%;
+    -webkit-animation:spin 20s linear infinite;
+    -moz-animation:spin 20s linear infinite;
+    animation:spin 20s linear infinite;
+  }
+
+  .asteroid5 {
+    position: absolute;
+    top: 24%;
+    left: 63%;
+    width: 8%;
+    -webkit-animation:spin 20s linear infinite;
+    -moz-animation:spin 20s linear infinite;
+    animation:spin 20s linear infinite;
+  }
+
+  .asteroid6 {
+    position: absolute;
+    top: 82%;
+    left: 82%;
+    width: 8%;
+    -webkit-animation:spin 20s linear infinite;
+    -moz-animation:spin 20s linear infinite;
+    animation:spin 20s linear infinite;
+  }
+
+  .sound {
+    position: absolute;
+    top: 80%;
+    left: 82%;
+    width: 15%;
+  }
+
+  #foobar { display: none }
+
+  
+    @-moz-keyframes spin { 
+        100% { -moz-transform: rotate(360deg); } 
+    }
+    @-webkit-keyframes spin { 
+        100% { -webkit-transform: rotate(360deg); } 
+    }
+    @keyframes spin { 
+        100% { 
+            -webkit-transform: rotate(360deg); 
+            transform:rotate(360deg); 
+        } 
+    }

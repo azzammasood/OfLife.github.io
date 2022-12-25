@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles/page_3_style.css">
+    <title>Of Life</title>
+</head>
+<body>
+    <div class="parent">
+        <img class="image1" src="backgrounds/space-background.gif" />
+        <img class="image2" src="icons/earth.png" onclick=earthRiddle() alt="Planet Earth"/>
+        <img class="image3" src="icons/mercury.png" onclick=mercuryRiddle() alt="Planet Mercury"/>
+        <img class="image4" src="icons/sun.png" onclick=sunRiddle() alt="The Sun"/>
+        <img class="progress-image" id="progress-image" src="" alt="Progress to next level">
+        <img class="level-three-image" id="level-three" src="icons/level-three.png" alt="Level Three"/>
+        <audio class="sound" controls autoplay loop>
+            <source src='sounds/empty-spaces.mp3' type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!--Functions to ask riddles-->
+    <script>
+        var toNextLevel = 0;
+        function earthRiddle() {
+            var value = prompt('I protect the earth from meteoroids. I am?')
+            if (value == "mesosphere" || value == "meso" || value == "Mesosphere") {
+                alert("Correct answer, you explored the Earth!")
+                toNextLevel = toNextLevel + 1;
+            }
+            else {alert('Wrong answer, sorry..')}
+            if (toNextLevel == 3)
+            {
+                show()
+                playAudio('sounds/click-sound.mp3');
+                if (localStorage.getItem("level0") == "cleared")
+                {
+                    location.replace('page_bonus-level.html')
+                }
+                var delayInMilliseconds = 2500;
+                setTimeout(function() {
+                location.replace("page_4.html");
+                }, delayInMilliseconds);
+            }
+            return value;
+        }
+        function mercuryRiddle() {
+            var value = prompt('I have no moons but I orbit the sun very fast. Can you guess my name at last? Which planet am I?')
+            if (value == "mercury" || value == "Mercury") {
+                alert("Correct answer, you explored Mercury!")
+                toNextLevel = toNextLevel + 1;
+            }
+            else {alert('Wrong answer, sorry..')}
+            if (toNextLevel == 3)
+            {
+                show()
+                playAudio('sounds/click-sound.mp3');
+                if (localStorage.getItem("level0") == "cleared")
+                {
+                    location.replace('page_bonus-level.html')
+                }
+                var delayInMilliseconds = 2500;
+                setTimeout(function() {
+                location.replace("page_4.html");
+                }, delayInMilliseconds);
+            }
+            return value;
+        }
+        function sunRiddle() {
+            var value = prompt('Never resting, never still. Moving silently from hill to hill. It does not walk, run or trot. All is cool where it is not?')
+            if (value == "sunshine" || value == "Sunshine") {
+                alert("Correct answer, you explored the Sun!")
+                toNextLevel = toNextLevel + 1;
+            }
+            else {alert('Wrong answer, sorry..')}
+            if (toNextLevel == 3)
+            {
+                show()
+                playAudio('sounds/click-sound.mp3');
+                if (localStorage.getItem("level0") == "cleared")
+                {
+                    location.replace('page_bonus-level.html')
+                }
+                var delayInMilliseconds = 2500;
+                setTimeout(function() {
+                location.replace("page_4.html");
+                }, delayInMilliseconds);
+            }
+            return value;
+        }
+        function playAudio(url) {
+            new Audio(url).play();
+        }
+    </script>
+
+    <!--Disappear image after 2.4 seconds-->
+    <script>
+        function show() {
+        let image = document.getElementById("progress-image");
+        image.src = "icons/progress.png"
+        window.setTimeout("document.getElementById('progress-image').style.display='none';", 1500);
+        }
+    </script>
+    <script type="text/javascript">
+        window.setTimeout("document.getElementById('level-three').style.display='none';", 1400); 
+    </script>
+</body>
+</html>

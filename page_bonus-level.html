@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles/bonus-level_style.css">
+    <title>Of Life</title>
+</head>
+<body>
+    <div class="parent">
+        <img class="image1" src="backgrounds/space-background.gif" alt="Space Background"/>
+        <img class="asteroid1" src="icons/asteroid.png" onclick=clickAsteroid() alt="Asteroid"/>
+        <img class="asteroid2" src="icons/asteroid.png" onclick=clickAsteroid() alt="Asteroid"/>
+        <img class="asteroid3" src="icons/asteroid.png" onclick=clickAsteroid() alt="Asteroid"/>
+        <img class="asteroid4" src="icons/asteroid.png" onclick=clickAsteroid() alt="Asteroid"/>
+        <img class="asteroid5" src="icons/asteroid.png" onclick=clickAsteroid() alt="Asteroid"/>
+        <img class="asteroid6" src="icons/asteroid.png" onclick=clickAsteroid() alt="Asteroid"/>
+        <iframe src="sounds/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+        <audio class="sound" controls autoplay loop>
+            <source src='sounds/empty-spaces.mp3' type="audio/mpeg">
+        </audio>
+    </div>
+    <script>
+        var count = 0;
+        function clickAsteroid() {
+            count = count + 1;
+            if (count == 6)
+            {
+                alert("Game over. This is a bonus level that punishes, not rewards.");
+                location.replace('index.html');
+            }
+        }
+
+    </script>
+</body>
+</html>

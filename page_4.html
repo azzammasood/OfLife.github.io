@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles/page_4_style.css">
+    <title>Of Life</title>
+</head>
+<body onload=initialize()>
+    <div class="parent">
+        <img class="image1" src="backgrounds/space-background.gif" alt="Space Background"/>
+        <img class="image3" id="alien" src="icons/alien.png" onclick=attack() alt="Alien Boss"/>
+        <img class="dead-alien" id="dead-alien" src="icons/dead-alien.png" onclick="alert('The alien rests in peace..')" alt="Dead Alien"/>
+        <img class="image4" id="fight" src="icons/fight.png" onclick=bossBattle() alt="Fight button"/>
+        <img class="image2" id="final-id" src="icons/final-level.png" alt="Final Level"/>
+        <img class="locked-chest" id="locked" src="icons/chest-locked.png" onclick=unlock() alt="Locked Chest">
+        <img class="unlocked-chest" id="unlocked" src="icons/chest-unlocked.png" alt="Unlocked Chest">
+        <img class="sword" id="sword" src="icons/sword.png" onclick=wield() alt="UtraSword">
+        <img class="completed" id="complete" src="icons/completed.png" alt="Completed the game">
+        <img class="player-health-full" id="player-full" src="icons/Health Bars/Player-Full.png" alt="Player's health">
+        <img class="player-health-70" id="player-70" src="icons/Health Bars/Player-70%.png" alt="Player's health">
+        <img class="player-health-40" id="player-40" src="icons/Health Bars/Player-40%.png" alt="Player's health">
+        <img class="player-health-10" id="player-10" src="icons/Health Bars/Player-10%.png" alt="Player's health">
+        <img class="alien-health-full" id="alien-full" src="icons/Health Bars/Alien-Full.png" alt="Alien's health">
+        <img class="alien-health-70" id="alien-70" src="icons/Health Bars/Alien-70%.png" alt="Alien's health">
+        <img class="alien-health-40" id="alien-40" src="icons/Health Bars/Alien-40%.png" alt="Alien's health">
+        <img class="alien-health-10" id="alien-10" src="icons/Health Bars/Alien-10%.png" alt="Alien's health">
+        <img class="player-health-text" id="player-health-text" src="icons/Health Bars/player-health.png" alt="Text for Player's health"/>
+        <img class="alien-health-text" id="alien-health-text" src="icons/Health Bars/alien-health.png" alt="Text for Alien's health"/>
+        <img class="statement" id="statement" src="icons/statement.png" onclick="location.replace('statement.html')" alt="Alien Boss"/>
+        <audio class="sound" controls autoplay loop>
+            <source src='sounds/empty-spaces.mp3' type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        var wield;
+        var player_health = 100;
+        var alien_health = 100;
+        
+        function initialize()
+        {
+            document.getElementById("locked").style.visibility = "hidden";
+            document.getElementById("unlocked").style.visibility = "hidden";
+            document.getElementById("sword").style.visibility = "hidden";
+            document.getElementById("player-full").style.visibility = "hidden";
+            document.getElementById("player-70").style.visibility = "hidden";
+            document.getElementById("player-40").style.visibility = "hidden";
+            document.getElementById("player-10").style.visibility = "hidden";
+            document.getElementById("alien-full").style.visibility = "hidden";
+            document.getElementById("alien-70").style.visibility = "hidden";
+            document.getElementById("alien-40").style.visibility = "hidden";
+            document.getElementById("alien-10").style.visibility = "hidden";
+            document.getElementById("complete").style.visibility = "hidden";
+            document.getElementById("player-health-text").style.visibility = "hidden";
+            document.getElementById("alien-health-text").style.visibility = "hidden";
+            document.getElementById("dead-alien").style.visibility = "hidden";
+            document.getElementById("statement").style.visibility = "hidden";
+        }
+        function bossBattle() {
+            var value = prompt("You fear to lose it while you have it but won't miss it when it's gone. What is it?");
+            if (value == "Life" || value == "life") {
+                document.getElementById("fight").style.visibility = "hidden";
+                document.getElementById("locked").style.visibility = "visible";
+            }
+        }
+        function unlock() {
+            document.getElementById("locked").style.visibility = "hidden";
+            document.getElementById("unlocked").style.visibility = "visible";
+            document.getElementById("sword").style.visibility = "visible";
+        }
+        function show() {
+            document.getElementById("completed").style.visibility = "visible";
+            location.replace('statement.html')
+        }
+        function wield()
+        {
+            playAudio('sounds/click-sound.mp3');
+            alert("You've wielded the UltraSword! Now attack the alien..")
+            document.getElementById("sword").style.visibility = "hidden";
+            if (document.getElementById("player-full").style.visibility != "visible")
+                {
+                    document.getElementById("player-full").style.visibility = "visible"
+                    document.getElementById("player-health-text").style.visibility = "visible";
+                }
+                if (document.getElementById("alien-full").style.visibility != "visible")
+                {
+                    document.getElementById("alien-full").style.visibility = "visible"
+                    document.getElementById("alien-health-text").style.visibility = "visible";
+                }
+            wield = true;
+        }
+        function attack()
+        {
+            if (wield != true)
+            {
+                alert("Find a weapon!")
+                if (document.getElementById("player-full").style.visibility != "visible")
+                {
+                    document.getElementById("player-full").style.visibility = "visible"
+                    document.getElementById("player-health-text").style.visibility = "visible";
+                }
+                if (document.getElementById("alien-full").style.visibility != "visible")
+                {
+                    document.getElementById("alien-full").style.visibility = "visible"
+                    document.getElementById("alien-health-text").style.visibility = "visible";
+                }
+            }
+            else
+            {
+                if (document.getElementById("player-full").style.visibility != "visible")
+                {
+                    document.getElementById("player-full").style.visibility = "visible"
+                    document.getElementById("player-health-text").style.visibility = "visible";
+                }
+                if (document.getElementById("alien-full").style.visibility != "visible")
+                {
+                    document.getElementById("alien-full").style.visibility = "visible"
+                    document.getElementById("alien-health-text").style.visibility = "visible";
+                }
+                
+                var random_number = Math.floor(Math.random() * 3)
+                if (random_number == 0)
+                {
+                    alert("Cancelled each others' attack!")
+                }
+                else if (random_number == 1)
+                {
+                    document.getElementById("alien-full").style.visibility = "hidden";
+                    alert("Alien took 30 damage!")
+                    alien_health = alien_health - 30;
+                    if (alien_health == 70)
+                    {
+                        document.getElementById("alien-70").style.visibility = "visible";
+                        document.getElementById("alien-40").style.visibility = "hidden";
+                        document.getElementById("alien-10").style.visibility = "hidden";
+                    }
+                    else if (alien_health == 40)
+                    {
+                        document.getElementById("alien-40").style.visibility = "visible";
+                        document.getElementById("alien-70").style.visibility = "hidden";
+                        document.getElementById("alien-10").style.visibility = "hidden";
+                    }
+                    else if (alien_health == 10)
+                    {
+                        document.getElementById("alien-10").style.visibility = "visible";
+                        document.getElementById("alien-40").style.visibility = "hidden";
+                        document.getElementById("alien-70").style.visibility = "hidden";
+                    }
+                    else if (alien_health < 0)
+                    {
+                        playAudio('sounds/click-sound.mp3');
+                        document.getElementById("alien-70").style.visibility = "hidden";
+                        document.getElementById("alien-40").style.visibility = "hidden";
+                        document.getElementById("alien-10").style.visibility = "hidden";
+                        document.getElementById("alien").style.visibility = "hidden";
+                        document.getElementById("dead-alien").style.visibility = "visible";
+                        document.getElementById("complete").style.visibility = "visible";
+                        document.getElementById("statement").style.visibility = "visible";
+                    }
+                }
+                else if (random_number == 2)
+                {
+                    document.getElementById("player-full").style.visibility = "hidden";
+                    alert("You took 30 damage!")
+                    player_health = player_health - 30;
+                    if (player_health == 70)
+                    {
+                        document.getElementById("player-70").style.visibility = "visible";
+                        document.getElementById("player-40").style.visibility = "hidden";
+                        document.getElementById("player-10").style.visibility = "hidden";
+                    }
+                    else if (player_health == 40)
+                    {
+                        document.getElementById("player-40").style.visibility = "visible";
+                        document.getElementById("player-70").style.visibility = "hidden";
+                        document.getElementById("player-10").style.visibility = "hidden";
+                    }
+                    else if (player_health == 10)
+                    {
+                        document.getElementById("player-10").style.visibility = "visible";
+                        document.getElementById("player-40").style.visibility = "hidden";
+                        document.getElementById("player-70").style.visibility = "hidden";
+                    }
+                    else if (player_health < 0)
+                    {
+                        document.getElementById("player-70").style.visibility = "hidden";
+                        document.getElementById("player-40").style.visibility = "hidden";
+                        document.getElementById("player-10").style.visibility = "hidden";
+                        alert("You lost..")
+                        location.replace("index.html")
+                    }
+                }
+            }
+        }
+        function playAudio(url) {
+            new Audio(url).play();
+        }
+    </script>
+    <script type="text/javascript">
+        window.setTimeout("document.getElementById('final-id').style.display='none';", 1400); 
+    </script>
+</body>
+</html>

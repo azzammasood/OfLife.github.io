@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles/page_2_style.css">
+    <title>Of Life</title>
+</head>
+<body>
+    <div class="parent">
+        <img class="image1" src="backgrounds/space-background.gif" />
+        <img class="image2" src="icons/satellite-small.png" onclick="alert('Explored the satellite!')" alt="Satellite"/>
+        <img class="image3" src="icons/satellite-big.png" onclick=ageRiddle() alt="Big Satellite"/>
+        <img class="image4" src="icons/astronaut.png" onclick=raceRiddle() alt="Falling Astronaut"/>
+        <img class="progress-image" id="progress-image" src="" alt="Progress to next level">
+        <img class="level-two-image" id="level-two" src="icons/level-two.png" alt="Level Two"/>
+        <audio class="sound" controls autoplay loop>
+            <source src='sounds/empty-spaces.mp3' type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!--Functions to ask riddles-->
+    <script>
+        var toNextLevel = 0;
+        function ageRiddle() {
+            var value = prompt('6 years ago you were 6 years old 6 years later how old are you?')
+            if (value == "18" || value == "eighteen" || value == "Eighteen") {
+                alert("Correct answer, you explored the big satellite!")
+                toNextLevel = toNextLevel + 1;
+            }
+            if (toNextLevel == 2)
+            {
+                show()
+                playAudio('sounds/click-sound.mp3');
+                var delayInMilliseconds = 2500; //1 second
+                setTimeout(function() {
+                location.replace("page_3.html");
+                }, delayInMilliseconds);
+            }
+            return value;
+        }
+        function raceRiddle() {
+            var value = prompt('You’re in a race and you pass the person in second place. What place are you in now?')
+            if (value == "second" || value == "Second" || value == "2nd" || value == "2" || value == "two") {
+                alert("Correct answer, you explored the astronaut!")
+                toNextLevel = toNextLevel + 1;
+            }
+            if (toNextLevel == 2)
+            {
+                show()
+                var delayInMilliseconds = 1300; //1 second
+                setTimeout(function() {
+                location.replace("page_3.html");
+                }, delayInMilliseconds);
+            }
+            return value;
+        }
+        function playAudio(url) {
+            new Audio(url).play();
+        }
+    </script>
+
+    <!--Disappear image after 2.4 seconds-->
+    <script>
+        function show() {
+        let image = document.getElementById("progress-image");
+        image.src = "icons/progress.png"
+        window.setTimeout("document.getElementById('progress-image').style.display='none';", 1500);
+        }
+    </script>
+    <script type="text/javascript">
+        window.setTimeout("document.getElementById('level-two').style.display='none';", 1400); 
+    </script>
+</body>
+</html>

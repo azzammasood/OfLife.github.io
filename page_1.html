@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles/page_1_style.css">
+    <title>Of Life</title>
+</head>
+<body>
+    <div class="parent">
+        <img class="image1" src="backgrounds/space-background.gif" />
+        <img class="image2" src="icons/satellite-big.png" onclick=getValueRiddle() alt="Satellite"/>
+        <img class="image3" id="progress-image" src="" alt="Progress to next level"/>
+        <img class="level-one-image" id="level-one" src="icons/level-one.png" alt="Level One"/>
+        <audio class="sound" controls autoplay loop>
+            <source src='sounds/empty-spaces.mp3' type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        function getValueRiddle() {
+            var value = prompt("A single mother had a baby, but she was poor so the baby did not have food, clothes, shoes. What else did the baby not have?");
+            if (value == "father" || value == "Father" || value == "A father" || value == "A father.") {
+                alert("Correct answer, you explored the satellite!")
+                playAudio('sounds/click-sound.mp3');
+                show()
+                var delayInMilliseconds = 2500; //1 second
+                setTimeout(function() {
+                location.replace("page_2.html");
+                }, delayInMilliseconds);
+                
+            }
+            return value;
+        }
+    </script>
+    <script>
+        function show() {
+        let image = document.getElementById("progress-image");
+        image.src = "icons/progress.png"
+        window.setTimeout("document.getElementById('progress-image').style.display='none';", 1500);
+        }
+        function playAudio(url) {
+            new Audio(url).play();
+        }
+    </script>
+    <script type="text/javascript">
+        window.setTimeout("document.getElementById('level-one').style.display='none';", 1400); 
+    </script>
+</body>
+</html>
